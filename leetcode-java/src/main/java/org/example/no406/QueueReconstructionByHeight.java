@@ -1,7 +1,7 @@
 package org.example.no406;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 
 public class QueueReconstructionByHeight {
@@ -16,7 +16,7 @@ public class QueueReconstructionByHeight {
                 return Integer.compare(o1[1], o2[1]);
             }
         });
-        List<int[]> resultList = new LinkedList<>();
+        List<int[]> resultList = new ArrayList<>();
         for (int[] person : people) {
             resultList.add(person[1], person);
         }
