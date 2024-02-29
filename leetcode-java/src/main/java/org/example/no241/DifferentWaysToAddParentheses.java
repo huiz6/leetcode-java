@@ -1,11 +1,18 @@
 package org.example.no241;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class DifferentWaysToAddParentheses {
 
+    private final Map<String, List<Integer>> map = new HashMap<>();
+
     public List<Integer> diffWaysToCompute(String expression) {
+        if (map.containsKey(expression)) {
+            return map.get(expression);
+        }
         List<Integer> resultList = new ArrayList<>();
         for (int i = 0; i < expression.length(); i++) {
             char c = expression.charAt(i);
@@ -34,6 +41,7 @@ public class DifferentWaysToAddParentheses {
         if (resultList.isEmpty()) {
             resultList.add(Integer.parseInt(expression));
         }
+        map.put(expression, resultList);
         return resultList;
     }
 
