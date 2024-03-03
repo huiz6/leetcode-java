@@ -16,7 +16,6 @@ public class RandomPickWithWeight {
     public int pickIndex() {
         int sum = this.pick[this.pick.length - 1];
         int random = (int) (sum * Math.random());
-//        int random = sum - 1;
         int index = 0;
         for (int p : pick) {
             if (random < p) {
