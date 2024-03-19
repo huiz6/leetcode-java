@@ -1,8 +1,10 @@
 package org.example.no21;
 
+import org.example.base.ListNodeBase;
+
 import java.util.Objects;
 
-public class MergeTwoSortedLists {
+public class MergeTwoSortedLists extends ListNodeBase {
 
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         if (Objects.isNull(list1)) {
@@ -64,17 +66,6 @@ public class MergeTwoSortedLists {
 //        printList(head2);
         MergeTwoSortedLists mergeTwoSortedLists = new MergeTwoSortedLists();
         ListNode mergedHead = mergeTwoSortedLists.mergeTwoLists(head1, head2);
-        printList(mergedHead);
-    }
-
-    public static void printList(ListNode node) {
-        while (true) {
-            System.out.println(node.val);
-            if (Objects.isNull(node.next)) {
-                break;
-            } else {
-                node = node.next;
-            }
-        }
+        print(mergedHead);
     }
 }
