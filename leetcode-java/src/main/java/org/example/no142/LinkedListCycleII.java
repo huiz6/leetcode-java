@@ -1,8 +1,10 @@
 package org.example.no142;
 
+import org.example.base.ListNodeBase;
+
 import java.util.Objects;
 
-public class LinkedListCycleII {
+public class LinkedListCycleII extends ListNodeBase {
 
     public ListNode detectCycle(ListNode head) {
         ListNode fast = head;

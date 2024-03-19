@@ -1,10 +1,12 @@
 package org.example.no23;
 
+import org.example.base.ListNodeBase;
+
 import java.util.Comparator;
 import java.util.Objects;
 import java.util.PriorityQueue;
 
-public class MergeKSortedLists {
+public class MergeKSortedLists extends ListNodeBase {
 
     public ListNode mergeKLists(ListNode[] lists) {
         PriorityQueue<ListNode> priorityQueue = new PriorityQueue<>(

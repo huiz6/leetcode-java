@@ -1,9 +1,11 @@
 package org.example.no382;
 
 
+import org.example.base.ListNodeBase;
+
 import java.util.Objects;
 
-public class LinkedListRandomNode {
+public class LinkedListRandomNode extends ListNodeBase {
 
     private final ListNode head;
 
