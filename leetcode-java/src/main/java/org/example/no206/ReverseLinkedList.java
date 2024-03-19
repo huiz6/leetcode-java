@@ -1,8 +1,10 @@
 package org.example.no206;
 
+import org.example.base.ListNodeBase;
+
 import java.util.Objects;
 
-public class ReverseLinkedList {
+public class ReverseLinkedList extends ListNodeBase {
 
     public ListNode reverseList(ListNode head) {
         if (Objects.isNull(head)) {
@@ -34,20 +36,8 @@ public class ReverseLinkedList {
         node2.next = node3;
         node3.next = node4;
         node4.next = node5;
-        printList(head);
         ListNode reverse = new ReverseLinkedList().reverseList(head);
-        printList(reverse);
-    }
-
-    public static void printList(ListNode node) {
-        while (true) {
-            System.out.println(node.val);
-            if (Objects.isNull(node.next)) {
-                break;
-            } else {
-                node = node.next;
-            }
-        }
+        print(reverse);
     }
 
 }
