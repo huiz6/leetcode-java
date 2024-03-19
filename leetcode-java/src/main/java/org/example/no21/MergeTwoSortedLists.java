@@ -12,16 +12,8 @@ public class MergeTwoSortedLists {
             return list1;
         }
         ListNode head = null, pre = null;
-        while (Objects.nonNull(list1) || Objects.nonNull(list2)) {
-            if (Objects.isNull(list1)) {
-                pre.next = list2;
-                pre = list2;
-                list2 = list2.next;
-            } else if (Objects.isNull(list2)) {
-                pre.next = list1;
-                pre = list1;
-                list1 = list1.next;
-            } else if (list1.val <= list2.val) {
+        while (Objects.nonNull(list1) && Objects.nonNull(list2)) {
+            if (list1.val <= list2.val) {
                 if (Objects.isNull(head)) {
                     head = list1;
                 } else {
@@ -38,6 +30,8 @@ public class MergeTwoSortedLists {
                 pre = list2;
                 list2 = list2.next;
             }
+
+            pre.next = Objects.isNull(list1)? list2 : list1;
         }
         return head;
     }
@@ -66,8 +60,8 @@ public class MergeTwoSortedLists {
         node22.next = node23;
         node23.next = node24;
         node24.next = node25;
-        printList(head1);
-        printList(head2);
+//        printList(head1);
+//        printList(head2);
         MergeTwoSortedLists mergeTwoSortedLists = new MergeTwoSortedLists();
         ListNode mergedHead = mergeTwoSortedLists.mergeTwoLists(head1, head2);
         printList(mergedHead);
