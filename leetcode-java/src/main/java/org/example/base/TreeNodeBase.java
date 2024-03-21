@@ -1,5 +1,6 @@
 package org.example.base;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -62,10 +63,34 @@ public class TreeNodeBase {
         return root;
     }
 
+    public static List<Integer> bfs(TreeNode root) {
+        List<Integer> bfsList = new ArrayList<>();
+        if (Objects.isNull(root)) {
+            return bfsList;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            for (int i = 0; i < queue.size(); i++) {
+                TreeNode node = queue.poll();
+                bfsList.add(node.val);
+                if (Objects.nonNull(node.left)) {
+                    queue.add(node.left);
+                }
+                if (Objects.nonNull(node.right)) {
+                    queue.add(node.right);
+                }
+            }
+        }
+        return bfsList;
+    }
+
     public static void main(String[] args) {
         List<Integer> arrayList = Arrays.asList(0, 1, null, 3, 4, null, null, 7);
         TreeNode root = generateTree(arrayList);
-        System.out.println(root);
+
+        List<Integer> bfsList = bfs(root);
+        System.out.println(bfsList);
     }
 
 }
