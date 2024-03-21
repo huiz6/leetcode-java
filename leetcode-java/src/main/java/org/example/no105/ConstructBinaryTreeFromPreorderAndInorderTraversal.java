@@ -2,6 +2,8 @@ package org.example.no105;
 
 import org.example.base.TreeNodeBase;
 
+import java.util.List;
+
 public class ConstructBinaryTreeFromPreorderAndInorderTraversal extends TreeNodeBase {
 
     public TreeNode buildTree(int[] preorder, int[] inorder) {
@@ -39,7 +41,12 @@ public class ConstructBinaryTreeFromPreorderAndInorderTraversal extends TreeNode
     }
 
     public static void main(String[] args) {
-
+        int[] preorder = new int[]{3, 9, 20, 15, 7};
+        int[] inorder = new int[]{9, 3, 15, 20, 7};
+        ConstructBinaryTreeFromPreorderAndInorderTraversal constructBinaryTree = new ConstructBinaryTreeFromPreorderAndInorderTraversal();
+        TreeNode root = constructBinaryTree.buildTree(preorder, inorder);
+        List<Integer> bfsList = bfs(root);
+        System.out.println(bfsList);
     }
 
 }
