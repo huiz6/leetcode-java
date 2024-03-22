@@ -85,12 +85,40 @@ public class TreeNodeBase {
         return bfsList;
     }
 
+    public static List<Integer> bfsWithNull(TreeNode root) {
+        List<Integer> bfsList = new ArrayList<>();
+        if (Objects.isNull(root)) {
+            return bfsList;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        Queue<TreeNode> layerQueue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            boolean layerNotNull = false;
+            while (!queue.isEmpty()) {
+                TreeNode node = queue.poll();
+                layerNotNull |= Objects.nonNull(node);
+                layerQueue.add(node);
+            }
+            if (!layerNotNull) {
+                break;
+            }
+            while (!layerQueue.isEmpty()){
+                TreeNode node = layerQueue.poll();
+                bfsList.add(Objects.isNull(node) ? null : node.val);
+                queue.add(Objects.isNull(node) ? null : node.left);
+                queue.add(Objects.isNull(node) ? null : node.right);
+            }
+        }
+        return bfsList;
+    }
+
     public static void main(String[] args) {
         List<Integer> arrayList = Arrays.asList(0, 1, null, 3, 4, null, null, 7);
         TreeNode root = generateTree(arrayList);
 
-        List<Integer> bfsList = bfs(root);
-        System.out.println(bfsList);
+        System.out.println(bfs(root));
+        System.out.println(bfsWithNull(root));
     }
 
 }

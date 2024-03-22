@@ -1,10 +1,12 @@
 package org.example.no257;
 
+import org.example.base.TreeNodeBase;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class BinaryTreePaths {
+public class BinaryTreePaths extends TreeNodeBase {
 
     public List<String> binaryTreePaths(TreeNode root) {
         List<String> path = new ArrayList<>();
