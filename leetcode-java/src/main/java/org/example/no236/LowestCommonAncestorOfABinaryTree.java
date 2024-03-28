@@ -2,6 +2,7 @@ package org.example.no236;
 
 import org.example.base.TreeNodeBase;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 public class LowestCommonAncestorOfABinaryTree extends TreeNodeBase {
@@ -25,7 +26,15 @@ public class LowestCommonAncestorOfABinaryTree extends TreeNodeBase {
     }
 
     public static void main(String[] args) {
+        TreeNode root = generateTree(Arrays.asList(3, 5, 1, 6, 2, 0, 8, null, null, 7, 4));
+        LowestCommonAncestorOfABinaryTree lowestCommonAncestorOfABinaryTree = new LowestCommonAncestorOfABinaryTree();
+        TreeNode p1 = new TreeNode(5);
+        TreeNode q1 = new TreeNode(1);
+        System.out.println(lowestCommonAncestorOfABinaryTree.lowestCommonAncestor(root, p1, q1));
 
+        TreeNode p2 = new TreeNode(6);
+        TreeNode q2 = new TreeNode(7);
+        System.out.println(lowestCommonAncestorOfABinaryTree.lowestCommonAncestor(root, p2, q2));
     }
 
 }

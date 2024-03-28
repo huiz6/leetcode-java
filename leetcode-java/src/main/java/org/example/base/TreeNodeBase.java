@@ -39,6 +39,16 @@ public class TreeNodeBase {
             TreeNode node = (TreeNode) o;
             return this.val == node.val;
         }
+
+        @Override
+        public String toString() {
+            return String.valueOf(val);
+        }
+
+        @Override
+        public int hashCode() {
+            return val;
+        }
     }
 
 
