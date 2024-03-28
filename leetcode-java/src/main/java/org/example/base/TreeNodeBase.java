@@ -26,6 +26,19 @@ public class TreeNodeBase {
             this.left = left;
             this.right = right;
         }
+
+        @Override
+        public boolean equals(Object o) {
+            if (o == this) {
+                return true;
+            }
+            if (!(o instanceof TreeNode)) {
+                return false;
+            }
+
+            TreeNode node = (TreeNode) o;
+            return this.val == node.val;
+        }
     }
 
 
