@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Queue;
 
-public class TreeNodeBase {
+public class TreeNodeBase extends ListNodeBase {
 
     public static class TreeNode {
         public int val;
@@ -126,7 +126,7 @@ public class TreeNodeBase {
             if (!layerNotNull) {
                 break;
             }
-            while (!layerQueue.isEmpty()){
+            while (!layerQueue.isEmpty()) {
                 TreeNode node = layerQueue.poll();
                 bfsList.add(Objects.isNull(node) ? null : node.val);
                 queue.add(Objects.isNull(node) ? null : node.left);

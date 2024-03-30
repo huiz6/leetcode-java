@@ -1,5 +1,6 @@
 package org.example.base;
 
+import java.util.List;
 import java.util.Objects;
 
 public class ListNodeBase {
@@ -21,6 +22,16 @@ public class ListNodeBase {
             this.next = next;
         }
 
+    }
+
+    public static ListNode generateList(List<Integer> arrayList) {
+        ListNode head = new ListNode(arrayList.get(0)), cur = head;
+        for (int i = 1; i < arrayList.size(); i++) {
+            ListNode node = new ListNode(arrayList.get(i));
+            cur.next = node;
+            cur = node;
+        }
+        return head;
     }
 
     public static void print(ListNode node) {
